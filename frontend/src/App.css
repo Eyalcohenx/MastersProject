@@ -1,0 +1,223 @@
+
+#welcome {
+  width: 50%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+
+#guide {
+  width: 80%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+#info {
+  display: flex;
+}
+
+#info img {
+  width: 55%;
+}
+
+#welcome button, #guide button, #nextReplay {
+  padding: 1em;
+  font-size: 1em;
+  cursor: pointer;
+  background: #d9e8f5;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#machines {
+  list-style: none;
+  display: flex;
+}
+
+#machines li {
+  float: left;
+  width: 49%;
+}
+
+#machines li h4 {
+  text-align: center;
+}
+
+#machines h2, #machines h3 {
+  text-align: center;
+}
+
+#machines img {
+  width: 250px;
+  display: block;
+  margin: 0 auto;
+}
+
+#machines img:hover {
+  cursor: pointer;
+}
+
+#animate {
+  display: block;
+  z-index: 10;
+  width: 300px;
+  position: relative;
+  bottom: 200px;
+  /* margin: 0 auto; */
+  background:#fff57f9e;
+}
+
+.blur-filter {
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+
+.message {
+  text-align: center;
+}
+
+#gui {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.advice {
+  background: #fbef61;
+}
+
+#animate img, #dice img {
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+#animate button, .replayButton {
+  width: 142px;
+  display: block;
+  margin: 0 auto;
+  padding: 12px;
+  font-size: 1em;
+  background: #bde3ed;
+  cursor: pointer;
+}
+
+#answers {
+  padding: 10px;
+}
+
+#answers button {
+  width: 100px;
+  display: block;
+  padding: 12px;
+  font-size: 1em;
+  background: #bde3ed;
+  cursor: pointer;
+}
+
+#answers label, #answers span, #quiz label, #quiz span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#answers select {
+  width: 100px;
+  font-size: 1em;
+}
+
+#answers textarea {
+  font-size: 1em;
+  width: 600px;
+  height: 180px;
+}
+
+#quiz div {
+  display: block;
+  margin-left: 1em;
+}
+
+#quiz span {
+  font-weight: bolder;
+}
+
+#result {
+  color: firebrick;
+  font-size: 1.2em;
+}
+
+.wheelMessage {
+  color: #2d2ac9;
+}
+
+#dice button {
+  padding: 1em;
+  font-size: 1em;
+  cursor: pointer;
+  background: #d9e8f5;
+  margin: 0 auto;
+  display: block;
+  margin-top: 3.5em;
+}
+
+#dice h3 {
+  text-align: center;
+}
+
+#dice {
+  position: absolute;
+  z-index: 10000;
+  width: 70%;
+  top: 11em;
+  margin: 0 auto;
+  height: 175px;
+  background: #6ae5bc;
+}
+
+#answerBox textarea {
+  width: 60%;
+  height: 100px;
+  display: block;
+  font-size: 1em;
+}
+
+#endResults {
+  text-align: center;
+} 
+
+#reviewHeader {
+  color: #2d2ac9;
+}
+
+.adopt {
+  color: #2d2ac9;
+}
+
+.noAdopt {
+  color: coral;
+}
+
+.agree, .disagree {
+  width: 100px;
+  display: inline-block;
+  padding: 12px;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.agree {
+  background: #6ae5bc;
+}
+
+.disagree {
+  background: lightcoral
+}
+
+#consent {
+  padding: 40px;
+}

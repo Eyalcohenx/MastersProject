@@ -1,0 +1,6 @@
+{
+    "type": "ieg",
+    "eps": 0.1,
+    "exploration": "true_best",
+    "gamma": 1.19
+}

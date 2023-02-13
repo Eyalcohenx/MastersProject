@@ -1,0 +1,18 @@
+{
+  "main.css": "/node/Game/public/static/css/main.30493a6c.chunk.css",
+  "main.js": "/node/Game/public/static/js/main.2d175b55.chunk.js",
+  "main.js.map": "/node/Game/public/static/js/main.2d175b55.chunk.js.map",
+  "runtime~main.js": "/node/Game/public/static/js/runtime~main.040c1469.js",
+  "runtime~main.js.map": "/node/Game/public/static/js/runtime~main.040c1469.js.map",
+  "static/js/2.4525c696.chunk.js": "/node/Game/public/static/js/2.4525c696.chunk.js",
+  "static/js/2.4525c696.chunk.js.map": "/node/Game/public/static/js/2.4525c696.chunk.js.map",
+  "index.html": "/node/Game/public/index.html",
+  "precache-manifest.be609ee5ecfa1bd1f2214421aef2b479.js": "/node/Game/public/precache-manifest.be609ee5ecfa1bd1f2214421aef2b479.js",
+  "service-worker.js": "/node/Game/public/service-worker.js",
+  "static/css/main.30493a6c.chunk.css.map": "/node/Game/public/static/css/main.30493a6c.chunk.css.map",
+  "static/media/guide.png": "/node/Game/public/static/media/guide.a52b5674.png",
+  "static/media/jackpot.png": "/node/Game/public/static/media/jackpot.d851cc58.png",
+  "static/media/nomoney.png": "/node/Game/public/static/media/nomoney.980307d7.png",
+  "static/media/slot_machine.png": "/node/Game/public/static/media/slot_machine.064af86e.png",
+  "static/media/spinner.gif": "/node/Game/public/static/media/spinner.cffa9d9d.gif"
+}
