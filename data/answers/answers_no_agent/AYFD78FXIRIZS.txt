@@ -1,0 +1,20 @@
+I picked at random as I had no info at this stage.
+########
+I picked machine one so I could compare it's performance against machine 2.
+########
+I choose 1 because it had the better average reward.
+########
+2 now has the better average, so I choose that machine.
+########
+I stayed with machine 2 as its average is better,
+########
+The averages are now the same, I choose machine 1 as I had less info on that machine and getting more would make any advantage clearer.
+########
+Previous text belongs to this round. Last round I stayed with the machine I beleived was better.
+########
+Machine 2 has better average so I picked that one.
+########
+I stayed with the machine that has the better average result.
+########
+I picked machine 2 as it has a better average.
+########

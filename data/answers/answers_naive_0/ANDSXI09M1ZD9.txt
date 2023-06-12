@@ -1,0 +1,20 @@
+Because this was the first round, it seemed logical to try the machine that the helper recommended
+########
+I wanted to get a sense of the range of results and the different behavior of the two machines.
+########
+Because round 2 reward was significantly more than round 1 reward, i choose the non-recommended machine again
+########
+For comparison, I thought I should return to the first/recommended machine again.
+########
+So far, the machine 2 had given larger reward than machine 1 every time, so I think now I should stick with it.
+########
+Continuing with machine 2 because all of its rewards have been higher.  I now strongly suspect that the "helper" is not giving me good advice.
+########
+Machine 2 continues to average much better results than machine 1
+########
+Still, consistently, machine 2 has returned better results than machine 1.
+########
+I'm pretty sure every single round on machine 2 has scored higher than any machine 1 score that i have seen, so sticking with it.
+########
+I foolishly re-tried machine 1, just because I was concerned that only 2 data points (the previous two times I had tried it) were not a very reliable average.  This was a bad choice, since it gave me the lowest result yet.
+########

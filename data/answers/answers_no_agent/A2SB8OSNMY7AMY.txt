@@ -1,0 +1,20 @@
+I am left-handed but I always start with the right machine since most people are right handed.
+########
+Left hand got jealous.
+########
+The 3rd pick will always be the machine that was higher in the first round.
+########
+The next pick will be the lower amount from round 1.
+########
+The next round will start with the lowest average machine.
+########
+Then the higher average machine.
+########
+A pair beats 7 high
+########
+7+3 is greater than 7+1
+########
+This was random since the figures balanced like they are suppose to (wink).
+########
+This balanced the number of pick per machine.
+########

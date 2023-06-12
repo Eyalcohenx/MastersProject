@@ -1,0 +1,20 @@
+As the helper knows data about the machines that i don't know, i decided to evaluate the helpers info, and chose the machine number 2. So in the future i could use the outcome as reference and as kind of an "starting point".
+########
+I decided to assess the reward of the machine that was not recommended by the helper, to compare it with the reward from the previous round.
+########
+I picked the machine number 2 because i was trying to replicate the reward from the round #1.
+########
+As picking the other machine resulted on a low reward, this time i decided to go with the machine recommended by the helper (trying to improve the reward).
+########
+As the reward was low on the round # 4, i decided to switch machines, so i chose the machine number 2.
+########
+As in the round # 5 the reward was high, i decided to stick with the same machine and chose the machine number 2.
+########
+Trying to avoid a low reward round, i chose machine number 2.
+########
+To improve my reward, i decided to follow the helpers guidance.
+########
+I switched machines to get a better reward.
+########
+I decided to ignore the helpers advice.
+########

@@ -1,0 +1,21 @@
+Just getting a feel for what the machines rewarded
+
+########
+Still getting a feel for what the machines rewarded
+########
+Large reward on previous try...select again
+########
+Large reward on previous pick so try again.
+########
+Better average than machine number 1 so far
+########
+Reward going down on machine number 2, try machine 1 again
+########
+machine 1 reward not high but moving up
+########
+machine 1 trending down, machine 2 did give large reward earlier
+########
+machine 2 not giving large reward, take a chance with number 1 again
+########
+machine 1 reward trending up
+########

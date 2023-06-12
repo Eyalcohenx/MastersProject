@@ -1,0 +1,20 @@
+I wanted to test the machine 2, because I had not picked any yet.
+########
+I wanted to get a relevant average for machine 2, so I picked it up a few times.
+########
+I continued with machine 2, because the average was better than the one showed in the previous example (40 cents).
+########
+It was still over the average from the example, so I continued.
+########
+I wanted to test machine 1 against my machine 2's average that I built.
+########
+I wanted a significant sample so I picked 1 again.
+########
+After 2 tries, the average was way lower than the average from machine 2, so I decided to go on with machine 2. I did not care for the recommandation.
+########
+I decided to stick to machine 2 because I experienced better gains. I did not care for the recommandation.
+########
+I decided to stick to machine 2 because I experienced better gains. I did not care for the recommendation.
+########
+I continued with machine 2, since the average was so much higher. I did not believe in the recommendation system.
+########

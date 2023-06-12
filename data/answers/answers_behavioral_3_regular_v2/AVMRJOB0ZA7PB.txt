@@ -1,0 +1,20 @@
+The helper knows the winning probability of each machine
+########
+The helper can determine the winning probability of each machine
+########
+The helper prediction was not in my favour
+########
+I depended on my own prediction in selecting a machine
+########
+The helper prediction was the same with mine.
+########
+The helper predicted the same machine as I did
+########
+I felt machine number 2 has a high probability
+########
+I depended on my prediction in selecting a machine
+########
+I calculated the machine with the higher probability based on previous outcomes
+########
+I was convinced machine number 2 have the higher probability
+########

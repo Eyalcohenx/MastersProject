@@ -1,0 +1,21 @@
+As this is a first round. I picked it randomly.
+########
+This time I tried it with another machine
+########
+I thought machine 2 gave more than machine 1 gives
+########
+Again I tested machine 1 for whether its random or machine only gives more.
+########
+Reason Machine 1 gave me only few, so i tried out with machine 2 it works
+
+########
+Now I can understand that machine 2 always giving high reward
+########
+I did mistake here
+########
+I rectify my mistake here by choosing again machine 2
+########
+I continued with machine 2 and got more rewards
+########
+Finally I got least from machine 2 and its the last round.
+########

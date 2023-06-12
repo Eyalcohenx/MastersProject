@@ -1,0 +1,20 @@
+I started by picking a machine at random because I wasn't sure if my helper knew which machine would payout more.  
+########
+I won a decent amount on machine 2 in round 1, so I picked it again.
+########
+I continued to pick machine 2 because it seemed to have a good payout.
+########
+I wanted to see what kind of a payout machine 1 would give, so I tried it.
+########
+This time I chose machine 1 based on the previous amount won and the helper's pick.
+########
+Again, I decided to stick with the helper's pick.
+########
+Machine 1 didn't seem to payout as high as machine 2, so I started picking machine 2 again.
+########
+Machine 2 seemed to have a higher average payout, so I stuck with it.
+########
+I picked the machine that seemed to payout more.
+########
+I wanted to see if the low payout on machine one might have been a fluke, so I tried it again.
+########

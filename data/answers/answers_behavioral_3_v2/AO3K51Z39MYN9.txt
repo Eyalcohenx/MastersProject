@@ -1,0 +1,20 @@
+just a random choice, as opposed to pre-selected 1, both machines have the same chance
+########
+Machine 1 has not been tested - let's find out the probability of machine 1 and check the helper's insight
+########
+award is higher than on machine 2, advice is good
+########
+award (cents per-pick) is higher than on machine 2, advice is good
+########
+same answer as before: award (cents per-pick) is higher than on machine 2, advice is good
+########
+average on machine 1 is higher than on machine 2
+########
+average is still higher, no sense to test machine 2, although I should do it once
+########
+still better average; machine 1 generates more on average than machine 2; advice is good
+########
+advice is good; average on machine 1 is till higher than on machine 2
+########
+average per-pick is higher on machine 1; eventually I should test machine 2
+########

@@ -1,0 +1,20 @@
+Just try an arbitrary one
+########
+Collect data on unused machine
+########
+Pick highest average machine, with the data available it is the best choice.
+########
+Pick highest average machine, this machine looks hot.
+########
+Pick highest average machine, with the data available it is the best one.
+########
+Pick highest average machine, the helper doesn't understand this.
+########
+Pick highest average machine, it looks like it is awinner.
+########
+Pick highest average machine, the trend is your friend.
+########
+Pick highest average machine, it is by far the best.
+########
+Pick highest average machine, continue on the trend.
+########
