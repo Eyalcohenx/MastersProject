@@ -1,0 +1,50 @@
+Pseudo code for the original algorithm:
+
+both_arms_pulled():
+    return arm1.was_pulled and arm2.was_pulled
+
+
+least_preferred_arm_has_better_average():
+    return least_preferred_average > preferred_average
+
+
+preferred_arm_has_better_average():
+    return not least_preferred_arm_has_better_average()
+
+
+check_strategic_deviation():
+    if both_arms_pulled() and least_preferred_arm_has_better_average():
+        return true
+    else:
+        return false
+
+
+deviation_timeout():
+    if deviation_counter > round_down(sqrt(number_of_turns_left)):
+        return true
+    else:
+        return false
+
+
+check_back_to_normal():
+    if user_picked_preferred_arm() or preferred_arm_ha s_better_average() or deviation_timeout()
+
+
+behavioral_algorithm():
+    deviate_state = false
+    for i in range(1,10):
+        if not deviate_state:
+            if check_strategic_deviation():
+                deviate_state = true
+                deviation_counter = 0
+                recommendation = least_preferred_arm
+            else:
+                recommendation = preferred_arm
+        else:
+            deviation_counter += 1
+            if check_back_to_normal():
+                deviate_state = false
+                recommendation = preferred_arm
+            else:
+                recommendation = least_preferred_arm
+

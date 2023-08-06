@@ -3,7 +3,7 @@ import Algorithm from './Algorithm.js';
 const stayWithUserPercentage = 0.33;
 const maxTurns = 10;
 
-export default class BehavioralDeviationV3 extends Algorithm {
+export default class BehavioralDeviation3Arms extends Algorithm {
     constructor() {
         super();
 
@@ -20,23 +20,23 @@ export default class BehavioralDeviationV3 extends Algorithm {
         let m1 = (this.machinePicks[1] > 0) ? this.machineRewards[1] / this.machinePicks[1] : 0;
 
         let prevT = this.t - 1;
-        if (this.machinePicks[0] == 0) {
+        if (this.machinePicks[1] == 0) {
             this.withUserCounter = 0;
             return;
         }
 
-        // advice 0 if average of m0 greater
-        if (m0 >= m1) {
+        // advice 1 if average of m1 greater
+        if (m0 <= m1) {
             this.withUserCounter = 0;
             return;
         }
         
-        if (this.userChoices[prevT - 1]  == 0 && this.withUserCounter > 0) {
+        if (this.userChoices[prevT - 1]  == 1 && this.withUserCounter > 0) {
             this.withUserCounter = 0;
             return;
         }
 
-        // otherwise, if m1 average is greater, do deviate only one time
+        // otherwise, if m0 average is greater, do deviate only one time
         if (!this.hasUserLeft && machine !== this.lastAdvice) {
             this.hasUserLeft = true;
             this.withUserCounter = Math.floor((maxTurns - (this.t - 1)) * stayWithUserPercentage);
@@ -51,14 +51,14 @@ export default class BehavioralDeviationV3 extends Algorithm {
         
         // if last turn, advice 0
         if (this.t == 10) {
-            return 0;
+            return 1;
         }
 
         if (this.withUserCounter > 0) {
-            advice = 1;
+            advice = 0;
             this.withUserCounter--;
         } else {
-            advice = 0;
+            advice = 1;
         }
 
         this.lastAdvice = advice;
