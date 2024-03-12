@@ -1,65 +1,105 @@
 import Algorithm from './Algorithm.js';
 
-const stayWithUserPercentage = 0.33;
 const maxTurns = 10;
-
+const debug_prints = 0;
 export default class BehavioralDeviation3Arms extends Algorithm {
-    constructor() {
-        super();
+    constructor(machines) {
+        super(machines);
 
         this.getAdvice = this.getAdvice.bind(this);
-        this.hasUserLeft = false;
-        this.lastAdvice = -1;
-        this.withUserCounter =0;
+        this.lastAdvice = 0;
+        this.deviationCountdown = 0;
+        this.deviatedState = false;
+
+        this.nonPreferredArmPulled = false;
+        this.preferredArmPulled = false;
+        this.preferredArmIdx = 0;
+        for (let i = 0; i < this.machines.length; i++) {
+            if (this.machines[i].isPreferred === 1)
+                this.preferredArmIdx = i;
+        }
     }
 
-    update(machine, reward) {
-        super.update(machine, reward);
-
-        let m0 = (this.machinePicks[0] > 0) ? this.machineRewards[0] / this.machinePicks[0] : 0;
-        let m1 = (this.machinePicks[1] > 0) ? this.machineRewards[1] / this.machinePicks[1] : 0;
-
-        let prevT = this.t - 1;
-        if (this.machinePicks[1] == 0) {
-            this.withUserCounter = 0;
-            return;
-        }
-
-        // advice 1 if average of m1 greater
-        if (m0 <= m1) {
-            this.withUserCounter = 0;
-            return;
-        }
-        
-        if (this.userChoices[prevT - 1]  == 1 && this.withUserCounter > 0) {
-            this.withUserCounter = 0;
-            return;
-        }
-
-        // otherwise, if m0 average is greater, do deviate only one time
-        if (!this.hasUserLeft && machine !== this.lastAdvice) {
-            this.hasUserLeft = true;
-            this.withUserCounter = Math.floor((maxTurns - (this.t - 1)) * stayWithUserPercentage);
-            if (this.withUserCounter < 1) {
-                this.withUserCounter = 1;
-            }
-        }
+    update(machine_idx, reward) {
+        super.update(machine_idx, reward);
+        if (this.machines[machine_idx].isPreferred === 1)
+            this.preferredArmPulled = true;
+        if (this.machines[machine_idx].isPreferred !== 1)
+            this.nonPreferredArmPulled = true;
     }
 
     getAdvice() {
+        if (debug_prints)
+            console.log("getAdvice was called, machines = ", this.machines);
+
         let advice;
-        
+        let preferred_avg = 0;
+        let highest_score_avg = 0;
+        let highest_score_arm_idx = 0;
+        let machineAvgs = Array(this.machines.length).fill(0);
+
         // if last turn, advice 0
-        if (this.t == 10) {
+        if (this.turn === 10) {
             return 1;
         }
 
-        if (this.withUserCounter > 0) {
-            advice = 0;
-            this.withUserCounter--;
-        } else {
-            advice = 1;
+        for (let i = 0; i < this.machines.length; i++) {
+            machineAvgs[i] = (this.machinePicks[i] > 0) ? this.machineRewards[i] / this.machinePicks[i] : 0;
+            if (this.machines[i].isPreferred === 1)
+                preferred_avg = machineAvgs[i];
+            if (machineAvgs[i] > highest_score_avg)
+            {
+                highest_score_arm_idx = i;
+                highest_score_avg = machineAvgs[i];
+            }
         }
+
+        if (debug_prints) {
+            console.log("Preferred machine = ", this.preferredArmIdx, " Highest score machine = ", highest_score_arm_idx);
+            console.log("Preferred machine avg = ", preferred_avg, " Highest score machine avg = ", highest_score_avg);
+        }
+
+        if (!this.deviatedState) {
+            if (debug_prints)
+                console.log("not deviated state");
+            if (this.nonPreferredArmPulled && this.preferredArmPulled && highest_score_avg > preferred_avg) {
+                this.deviatedState = true;
+                this.deviationCountdown = Math.floor(Math.sqrt(maxTurns - this.turn));
+                if (debug_prints)
+                    console.log("changing to deviated state, deviationCountdown = ", this.deviationCountdown);
+            }
+        } else {
+            if (debug_prints)
+                console.log("deviated state");
+            this.deviationCountdown--;
+            // check if we need to go back to normal
+            if (this.lastUserPick !== this.lastAdvice) {
+                if (debug_prints)
+                    console.log("user didnt listen");
+                // get out of deviated state
+                this.deviatedState = false;
+            }
+            if (preferred_avg >= highest_score_avg) {
+                if (debug_prints)
+                    console.log("preferred have better average");
+                // get out of deviated state
+                this.deviatedState = false;
+            }
+            if (this.deviationCountdown === 0) {
+                if (debug_prints)
+                    console.log("deviation timeout reached");
+                // get out of deviated state
+                this.deviatedState = false;
+            }
+            if (!this.deviatedState && debug_prints)
+                console.log("getting out of deviated state");
+        }
+
+        if (this.deviatedState)
+            advice = highest_score_arm_idx;
+        else
+            advice = this.preferredArmIdx;
+
 
         this.lastAdvice = advice;
         return advice;

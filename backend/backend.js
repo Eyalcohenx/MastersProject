@@ -46,6 +46,7 @@ router.get("/getDistributions", (req, res) => {
     //     res.status(200).json({repeatedWorker: true});
     //     return;
     // }
+    // let distribution = logic.initGame(3, workerId);
     let distribution = logic.initGame(2, workerId);
 
     res.status(200).json({"machines": distribution});

@@ -6,15 +6,10 @@ import jackpot from '../imgs/jackpot.png';
 import nomoney from '../imgs/nomoney.png';
 import dice from '../imgs/dice.gif';
 import Answers from './Answers.js';
-import EpsilonGreedy from '../algorithms/EpsilonGreedy.js';
-import BehavioralDeviation from '../algorithms/BehavioralDeviation.js';
-import BehavioralDeviationV2 from '../algorithms/BehavioralDeviationV2.js';
-import BehavioralDeviationV3 from '../algorithms/BehavioralDeviationV3.js';
-import BehavioralDeviationV3M1 from '../algorithms/BehavioralDeviationV3M1.js';
-import Naive0 from '../algorithms/Naive0.js';
 import {config} from '../config/config.js';
 import { calculateTimeDifference } from '../utils/utils';
 import Replay from './Replay';
+import BehavioralDeviation3Arms from "../algorithms/BehavioralDeviation3Arms";
 
 const MAX_ROUNDS = 10;
 
@@ -31,7 +26,7 @@ export default class Game extends Component {
             roundCounter: 1
         }
 
-        this.adviceAlgo = new BehavioralDeviationV3M1();
+        this.adviceAlgo = new BehavioralDeviation3Arms(this.props.machines);
         this.playRound = this.playRound.bind(this);
         this.choices = [];
         this.results = [];
@@ -97,11 +92,8 @@ export default class Game extends Component {
         });
     }
     isGameOver() {
-        this.diceA = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
-        this.diceB = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
-
         if (this.state.roundCounter > 3) {
-            if ((this.diceA == this.diceB == 6) || this.state.roundCounter > MAX_ROUNDS) {
+            if (this.state.roundCounter > MAX_ROUNDS) {
                 this.setState({end: true, dice: false}, () => {
                     this.props.postResults(this.choices, this.advices, this.state.reward, this.results);
                 })
@@ -127,7 +119,7 @@ export default class Game extends Component {
                             {!this.state.showDiceMsg && <img src={dice} />}
                             {this.state.showDiceMsg && 
                                 <div>
-                                    <h2 className="message wheelMessage">You can play another round and accumulate prizes.</h2>
+                                    <h2 className="message wheelMessage">Let's play another round</h2>
                                     <button onClick={()=>{
                                         this.prevTime = performance.now();
                                         this.setState({dice: false, showDiceMsg: false, advice: this.getAgentAdvice()});

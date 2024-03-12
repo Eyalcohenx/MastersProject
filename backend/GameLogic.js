@@ -10,18 +10,30 @@ class GameLogic {
     initGame(k, workerId) {
         // create session object
         this.session[workerId] = {};
-        this.session[workerId].arr = [{
-            "A": {p: 0.7, range: [0, 50]},
-            "B": {p: 0.3, range: [50, 100]}
-        }, 
-        {
-            "A": {p: 0.4, range: [0, 50]},
-            "B": {p: 0.6, range: [50, 100]}
-        }];
+        let machines_arr =
+            [{
+                "A": {p: 0.7, range: [0, 50]},
+                "B": {p: 0.3, range: [50, 100]},
+                "isPreferred": 1 // preferred machine
+            },
+            // {
+            //     "A": {p: 0.5, range: [0, 50]},
+            //     "B": {p: 0.5, range: [50, 100]},
+            //     "isPreferred": 0 // neutrally preferred
+            // },
+            {
+                "A": {p: 0.4, range: [0, 50]},
+                "B": {p: 0.6, range: [50, 100]},
+                "isPreferred": -1 // least preferred
+            }];
+        this.session[workerId].arr = machines_arr.map(value => ({
+            value,
+            sort: Math.random()
+        })).sort((a, b) => a.sort - b.sort).map(({value}) => value)
 
         return this.session[workerId].arr;
     }
-    
+
     agentAdvice(workerId) {
         console.log(this.session);
         return this.session[workerId].bestMachine;
