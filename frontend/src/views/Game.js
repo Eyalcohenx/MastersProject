@@ -130,21 +130,21 @@ export default class Game extends Component {
                         <ul id="machines">
                             {
                                 machines.map((machine, i) => {
-                                    let advice = (this.state.advice == i) ? 'advice' : '';
+                                    let advice = (this.state.advice === i) ? 'advice' : '';
                                     let avgWin = this.statistics[i].win / this.statistics[i].overall;
 
                                     return (
                                         <li key={'l' + i} className={advice}>
                                             <h2>Machine {i + 1}</h2>
-                                            {advice == 'advice' && <h3>Helper's recommendation</h3>}
+                                            {advice === 'advice' && <h3>Helper's recommendation</h3>}
                                                 <img className={blurClass} src={machinePng} alt="machine" onClick={(e) => {
                                                         this.playRound(i);
                                                 }}/>
                                             <div>
-                                                {this.statistics[i].overall == 0  && <h4>Hasn’t been picked yet</h4>}
+                                                {this.statistics[i].overall === 0  && <h4>Hasn’t been picked yet</h4>}
                                                 {this.statistics[i].overall > 0 && <h4>Won {!avgWin ? 0 : avgWin.toFixed(0)} cents per-pick on average in {this.statistics[i].overall} picks so far</h4>}
                                             </div>
-                                            {this.state.isGambling && this.state.currMachine == i &&
+                                            {this.state.isGambling && this.state.currMachine === i &&
                                                 <div id="animate">
                                                     {!this.state.msg && <img src={spinner} alt="animate" />}
                                                     {this.state.msg.includes("won") && <img src={jackpot} alt='results'/>}

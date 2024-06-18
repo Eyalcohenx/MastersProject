@@ -161,8 +161,8 @@ export default class Replay extends Component {
                     </div>
                     <div id="answerBox">
                             <h3>You chose machine number {currChoice + 1}</h3>
-                            {currAdvice == currChoice && <h3>You chose <span class="adopt">to adopt</span> the helper's advice.</h3>}
-                            {currAdvice != currChoice && <h3>You chose <span class="noAdopt">not to adopt</span> the helper's advice.</h3>}                            
+                            {currAdvice === currChoice && <h3>You chose <span class="adopt">to adopt</span> the helper's advice.</h3>}
+                            {currAdvice !== currChoice && <h3>You chose <span class="noAdopt">not to adopt</span> the helper's advice.</h3>}
                             <h4>Please elaborate on your choice (at least 5 words):</h4>
                             <textarea onChange={(e) => this.setState({currAnswer: e.target.value})}></textarea>
                             <button id="nextReplay" onClick={(e)=> this.saveAnswer(e, currChoice, currReward)}>Save and Continue</button>
@@ -180,7 +180,7 @@ export default class Replay extends Component {
                     <h2>You won {finalReward} virtual dollars.</h2>
                     {(finalReward >= 6) &&  <h3>You will receive {finalReward * 10} real cents bonus.</h3>}
                     {(finalReward < 6) &&  <h3>You will receive 60 real cents bonus.</h3>}
-                    <form id="hiddenForm" method="POST" action={config.amazonTurkApi}>
+                    <form id="hiddenForm" method="POST" action={config.ProlificRedirectURL}>
                         <input type="hidden" value={this.props.assignmentId} name="assignmentId"/>
                         <input type="hidden" value={this.props.workerId} name="workerId"/>
                         <input className="replayButton" type="submit" value="Finish !" />

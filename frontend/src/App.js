@@ -28,9 +28,9 @@ class App extends Component {
   componentWillMount() {
     // read worker's parameters
     const urlParams = new URLSearchParams(window.location.search);
-    const workerId = urlParams.get('workerId');
-    const assignmentId = urlParams.get('assignmentId');
-    const hitId = urlParams.get('hitId');
+    const workerId = urlParams.get('PROLIFIC_PID');
+    const assignmentId = urlParams.get('STUDY_ID');
+    const hitId = urlParams.get('SESSION_ID');
 
     this.setState({
       workerId: workerId,
@@ -44,7 +44,7 @@ class App extends Component {
       fetch(config.apiUrl + "getDistributions?workerId=" + workerId)
       .then((response) => response.json())
       .then((data) => {
-        if (data.repeatedWorker == true) {
+        if (data.repeatedWorker === true) {
           this.setState({repeatedWorker: true})
         } else {
           this.setState({machines: data.machines})
@@ -55,11 +55,11 @@ class App extends Component {
   }
 
   nextScreen(prevScreen) {
-    if (prevScreen == "welcome") {
+    if (prevScreen === "welcome") {
       this.setState({currScreen: "guide"});
-    } else if (prevScreen == "guide") {
+    } else if (prevScreen === "guide") {
       this.setState({currScreen: "game"});
-    } else if (prevScreen == "error") {
+    } else if (prevScreen === "error") {
       this.setState({currScreen: "error"});
     }
   }
@@ -122,11 +122,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        {this.state.currScreen == "welcome" && <WelcomeScreen userStats={this.userStats} assignmentId={this.state.assignmentId} onEnd={this.nextScreen.bind(this)} />}
-        {this.state.currScreen == "game" && <Game userStats={this.userStats} assignmentId={this.state.assignmentId}
+        {this.state.currScreen === "welcome" && <WelcomeScreen userStats={this.userStats} assignmentId={this.state.assignmentId} onEnd={this.nextScreen.bind(this)} />}
+        {this.state.currScreen === "game" && <Game userStats={this.userStats} assignmentId={this.state.assignmentId}
                                              postResults={this.postResults.bind(this)} workerId={this.state.workerId} machines={this.state.machines} />}
-        {this.state.currScreen == "guide" && <Guide userStats={this.userStats} onEnd={this.nextScreen.bind(this)} />}
-        {this.state.currScreen == "error" && <h2>Seems like you do not properly understand the HIT instructions, so we cannot qualify you to participate in this HIT. Thank you.</h2>}
+        {this.state.currScreen === "guide" && <Guide userStats={this.userStats} onEnd={this.nextScreen.bind(this)} />}
+        {this.state.currScreen === "error" && <h2>Seems like you do not properly understand the HIT instructions, so we cannot qualify you to participate in this HIT. Thank you.</h2>}
       </div>
     );
   }

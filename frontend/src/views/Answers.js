@@ -32,7 +32,7 @@ export default class Answers extends Component {
           })
           .then((data) => data.json())
           .then((data) => {
-              if (data.msg == "ok") {
+              if (data.msg === "ok") {
                   this.setState({showForm: false});
               }
           })
@@ -110,11 +110,8 @@ export default class Answers extends Component {
                 <div id="endResults">
                     <h2>Thank you for participating.</h2>
                     <h2>You won {finalReward} virtual dollars.</h2>
-                    {(finalReward >= 6) &&  <h3>You will receive {finalReward * 10} real cents bonus.</h3>}
-                    {(finalReward < 6) &&  <h3>You will receive 60 real cents bonus.</h3>}
-                    <form id="hiddenForm" method="POST" action={config.amazonTurkApi}>
-                        <input type="hidden" value={this.props.assignmentId} name="assignmentId"/>
-                        <input type="hidden" value={this.props.workerId} name="workerId"/>
+                    {<h3>You will receive {Math.ceil(finalReward * 3)} real cents bonus.</h3>}
+                    <form id="hiddenForm" method="POST" action={config.ProlificRedirectURL}>
                         <input className="replayButton" type="submit" value="Finish !" />
                     </form>
                 </div>
