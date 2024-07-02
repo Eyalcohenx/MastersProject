@@ -111,9 +111,7 @@ export default class Answers extends Component {
                     <h2>Thank you for participating.</h2>
                     <h2>You won {finalReward} virtual dollars.</h2>
                     {<h3>You will receive {Math.ceil(finalReward * 3)} real cents bonus.</h3>}
-                    <form id="hiddenForm" method="POST" action={config.ProlificRedirectURL}>
-                        <input className="replayButton" type="submit" value="Finish !" />
-                    </form>
+                    <h1>Your Prolific completion code is <strong>C18ODKPF</strong></h1>
                 </div>
                 }
             </div>
