@@ -10,6 +10,7 @@ import {config} from '../config/config.js';
 import { calculateTimeDifference } from '../utils/utils';
 import Replay from './Replay';
 import BehavioralDeviation3Arms from "../algorithms/BehavioralDeviation3Arms";
+import BehavioralDeviationV3 from "../algorithms/BehavioralDeviationV3";
 
 const MAX_ROUNDS = 10;
 
@@ -26,7 +27,7 @@ export default class Game extends Component {
             roundCounter: 1
         }
 
-        this.adviceAlgo = new BehavioralDeviation3Arms(this.props.machines);
+        this.adviceAlgo = new BehavioralDeviationV3(this.props.machines);
         this.playRound = this.playRound.bind(this);
         this.choices = [];
         this.results = [];
@@ -62,12 +63,14 @@ export default class Game extends Component {
         }
 
         let range = probs[mass].range;
-        
+        // console.log("range is ", range);
+
         return Math.floor(Math.random() * (range[1] - range[0] + 1)) + range[0];
     }
 
     playRound(index) {
         let probs = this.props.machines[index];
+        // console.log("probs are ", probs);
 
         // prevent user clicking while gambling
         if (this.state.isGambling || this.state.dice) return;

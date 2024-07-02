@@ -26,11 +26,11 @@ class GameLogic {
                 "B": {p: 0.6, range: [50, 100]},
                 "isPreferred": -1 // least preferred
             }];
-        this.session[workerId].arr = machines_arr.map(value => ({
-            value,
-            sort: Math.random()
-        })).sort((a, b) => a.sort - b.sort).map(({value}) => value)
-
+        // this.session[workerId].arr = machines_arr.map(value => ({
+        //     value,
+        //     sort: Math.random()
+        // })).sort((a, b) => a.sort - b.sort).map(({value}) => value)
+        this.session[workerId].arr = machines_arr;
         return this.session[workerId].arr;
     }
 
