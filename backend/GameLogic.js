@@ -16,11 +16,11 @@ class GameLogic {
                 "B": {p: 0.3, range: [50, 100]},
                 "isPreferred": 1 // preferred machine
             },
-            // {
-            //     "A": {p: 0.5, range: [0, 50]},
-            //     "B": {p: 0.5, range: [50, 100]},
-            //     "isPreferred": 0 // neutrally preferred
-            // },
+            {
+                "A": {p: 0.5, range: [0, 50]},
+                "B": {p: 0.5, range: [50, 100]},
+                "isPreferred": 0 // neutrally preferred
+            },
             {
                 "A": {p: 0.4, range: [0, 50]},
                 "B": {p: 0.6, range: [50, 100]},

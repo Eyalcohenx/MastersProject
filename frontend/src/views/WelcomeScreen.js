@@ -47,10 +47,10 @@ export default class WelcomeScreen extends Component {
             return (
                 <div id="welcome">
                     <h1>Welcome !</h1>
-                    <p>In this experiment we have two slot machines. Each machine, when activated, gives you a varying amount of virtual cents. Meaning that even if you choose the
-                       same machine over and over again, each time it will provide a different prize. The two machines are different in the prizes they provide and one machine is better than the other (on average). Your job is to pick the machine to be used (to be activated) on each turn. For each virtual dollar you accumulate you will receive 3 real cents as a bonus.</p>
+                    <p>In this experiment we have three slot machines. Each machine, when activated, gives you a varying amount of virtual cents. Meaning that even if you choose the
+                       same machine over and over again, each time it will provide a different prize. The three machines are different in the prizes they provide and one machine is better than the others (on average). Your job is to pick the machine to be used (to be activated) on each turn. For each virtual dollar you accumulate you will receive 3 real cents as a bonus.</p>
                     <p>You have 10 rounds, and in each round you will be asked to choose a machine to be activated as described above.</p>
-                    <p>To assist you, there will be a helper that knows the average reward of each of the two machines. On each round the helper will highlight the machine it believes you should choose. To be fully fair we disclose that <u>the helper benefits from one of the machines, and every time you choose to activate this machine (which identity we cannot disclose) the helper will gain a few cents (not at your expense).</u></p>
+                    <p>To assist you, there will be a helper that knows the average reward of each of the machines. On each round the helper will highlight the machine it believes you should choose. To be fully fair we disclose that <u>the helper benefits from one of the machines, and every time you choose to activate this machine (which identity we cannot disclose) the helper will gain a few cents (not at your expense).</u></p>
                     <p><b>This experiment has a potential to accumulate a high bonus payment. The experiment requires thinking before each decision, so if you just want to get the low reward guaranteed please do not waste your time on this experiment.</b></p>
                     <p>In order to complete this experiment you must fill the Questionnaire at the last page.</p>
                     <p>The time duration of this experiment is 25 minutes tops.</p>

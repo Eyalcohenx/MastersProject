@@ -11,6 +11,7 @@ import { calculateTimeDifference } from '../utils/utils';
 import Replay from './Replay';
 import BehavioralDeviation3Arms from "../algorithms/BehavioralDeviation3Arms";
 import BehavioralDeviationV3 from "../algorithms/BehavioralDeviationV3";
+import BehavioralDeviationV3_3Arms from "../algorithms/BehavioralDeviationV3_3Arms";
 
 const MAX_ROUNDS = 10;
 
@@ -27,7 +28,7 @@ export default class Game extends Component {
             roundCounter: 1
         }
 
-        this.adviceAlgo = new BehavioralDeviationV3(this.props.machines);
+        this.adviceAlgo = new BehavioralDeviationV3_3Arms(this.props.machines);
         this.playRound = this.playRound.bind(this);
         this.choices = [];
         this.results = [];

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import guide from '../imgs/guide.png';
+import guide from '../imgs/guide_3_machines.png';
 import { calculateTimeDifference } from '../utils/utils';
 
 export default class Guide extends Component {
@@ -101,7 +101,7 @@ export default class Guide extends Component {
                     <label>
                         <span>2. What does the helper know that you don't know?</span>
                         <div><input type="radio" onChange={this.getAnswer.bind(this)} name="q2" value={0} />When will the game end</div>
-                        <div><input type="radio" onChange={this.getAnswer.bind(this)} name="q2" value={1} />The average of prizes awarded by each of the two machines</div>
+                        <div><input type="radio" onChange={this.getAnswer.bind(this)} name="q2" value={1} />The average of prizes awarded by each machine</div>
                         <div><input type="radio" onChange={this.getAnswer.bind(this)} name="q2" value={2} />How much bonus I will get in this experiment</div>
                     </label>
                     <label>
