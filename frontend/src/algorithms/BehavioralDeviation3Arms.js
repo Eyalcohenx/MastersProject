@@ -7,6 +7,9 @@ export default class BehavioralDeviation3Arms extends Algorithm {
         super(machines);
 
         this.getAdvice = this.getAdvice.bind(this);
+        if (debug_prints)
+            console.log("after calling getAdvice");
+
         this.lastAdvice = 0;
         this.deviationCountdown = 0;
         this.deviatedState = false;
@@ -39,7 +42,7 @@ export default class BehavioralDeviation3Arms extends Algorithm {
         let machineAvgs = Array(this.machines.length).fill(0);
 
         // if last turn, advice 0
-        if (this.turn === 10) {
+        if (this.turn === 11) {
             return 1;
         }
 
@@ -95,10 +98,16 @@ export default class BehavioralDeviation3Arms extends Algorithm {
                 console.log("getting out of deviated state");
         }
 
-        if (this.deviatedState)
+        if (this.deviatedState) {
             advice = highest_score_arm_idx;
-        else
+            if (debug_prints)
+                console.log("advice is highest_score_arm_idx = ", advice);
+        }
+        else {
             advice = this.preferredArmIdx;
+            if (debug_prints)
+                console.log("advice is preferredArmIdx = ", advice);
+        }
 
 
         this.lastAdvice = advice;
