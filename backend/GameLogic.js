@@ -12,8 +12,8 @@ class GameLogic {
         this.session[workerId] = {};
         let machines_arr =
             [{
-                "A": {p: 0.55, range: [0, 50]},
-                "B": {p: 0.45, range: [50, 100]},
+                "A": {p: 0.66, range: [0, 50]},
+                "B": {p: 0.34, range: [50, 100]},
                 "isPreferred": 1 // preferred machine
             },
             {
@@ -22,8 +22,8 @@ class GameLogic {
                 "isPreferred": 0 // neutrally preferred
             },
             {
-                "A": {p: 0.45, range: [0, 50]},
-                "B": {p: 0.55, range: [50, 100]},
+                "A": {p: 0.22, range: [0, 50]},
+                "B": {p: 0.78, range: [50, 100]},
                 "isPreferred": -1 // least preferred
             }];
         // this.session[workerId].arr = machines_arr.map(value => ({
