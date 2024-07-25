@@ -29,7 +29,7 @@ export default class Game extends Component {
             roundCounter: 1
         }
 
-        this.adviceAlgo = new BehavioralDeviationV3_3Arms(this.props.machines);
+        this.adviceAlgo = new Naive0(this.props.machines);
         this.playRound = this.playRound.bind(this);
         this.choices = [];
         this.results = [];
