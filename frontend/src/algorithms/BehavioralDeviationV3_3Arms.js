@@ -49,7 +49,7 @@ export default class BehavioralDeviationV3_3Arms extends Algorithm {
             return;
         }
 
-        // otherwise, if m1 average is greater or m2 average is greater, go into deviation state
+        // otherwise, if m1 average is greater or m2 average is greater and last pick wasn't last advice, go into deviation state
         if (debug_prints)
             console.log("hasUserLeft = " + this.hasUserLeft + " machine = " + machine + " lastAdvice = " + this.lastAdvice);
         if (!this.hasUserLeft && machine !== this.lastAdvice) {
